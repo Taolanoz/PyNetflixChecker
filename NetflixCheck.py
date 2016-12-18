@@ -23,10 +23,10 @@ def checkPassword(email,password):
 	print "Testing: " + email
 	validado = r1.text.find('Please enter a valid email')
 	if validado == -1:
-		stateA = "WORKING !","Email: "+email+" Password: "+password + "\n"
+		stateA = str("WORKING !","Email: "+email+" Password: "+password + "\n")
 		print "State: " + stateA
 	else:
-		stateA = "not working" + "\n"
+		stateA = str("not working" + "\n")
 		print "State: " + stateA
 
 def checkFile(archivo):
