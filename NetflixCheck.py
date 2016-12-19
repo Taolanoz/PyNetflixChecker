@@ -26,10 +26,6 @@ try:
 		if validado == -1:
 			print"State: WORKING !","Email: "+email+" Password: "+password + "\n"
 			workingList.append(email +':'+ password) 
-			for all in workingList:
-				outfile = open('working.txt', 'w')
-				outfile.write(all)
-				outfile.close()
 
 		else:
 			print"State: not working" + "\n"
@@ -47,5 +43,9 @@ try:
 		email=lineas.split(":")[0]
 		password=lineas.split(":")[1]
 		checkPassword(email,password)
-except KeyboardInterrupt:
+except:
+	outfile = open('working.txt', 'w')
+	for all in workingList:
+		outfile.write(all)
+		outfile.close()
 	sys.exit()
